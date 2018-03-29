@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>手动滚动图片</title>  
+<link rel="stylesheet" href="./style.css" type="text/css" media="screen" charset="utf-8" />
+<script src="./jquery1_9.js" type="text/javascript"></script>  
+<script src="./thumscroll-new.js" type="text/javascript"></script>  
+<script type="text/javascript">  
+$(document).ready(function(){  
+      
+ $.manualScroll({  
+        id:"scrollBox",
+        speed:1000  
+    });   
+});  
+  
+</script>  
+</head>  
+  
+<body>  
+
+<div id="container">  
+
+	<div id="scrollBox">
+
+	<div id="showArea">
+		<a href="javascript:void(0)"  class="hander prev" data-act="prev">  </a>
+		<a href="javascript:void(0)"  class="hander next" data-act="next">  </a>
+		
+	</div>  
+    <div id="scrollDiv">  
+		 
+      <ul class="scroll-ul clearfix">  
+		 
+        <li><img src="./images/1.jpg"/></li>  
+        <li><img src="./images/2.jpg"/></li>  
+        <li><img src="./images/3.jpg"/></li>  
+        <li><img src="./images/4.jpg"/></li>  
+        <li><img src="./images/5.jpg"/></li>  
+        <li><img src="./images/6.jpg"/></li>  
+       
+      </ul>  
+	  <a href="javascript:void(0)" class="hander prev" data-act="left"> 左 </a>
+	<a href="javascript:void(0)" class="hander next" data-act="right"> 右 </a>
+
+    </div>  
+	
+</div>
+<!--scroll-box end-->
+ 
+</div>  
+</body>  
+</html>  
+
+

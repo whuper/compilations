@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>浙信官网</title>
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/jquery.jslides.css" type="text/css" media="screen" charset="utf-8">
+	<script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.min.js">	</script>
+	<!--<script type="text/javascript" charset="utf-8" src="js/jquery.jslides.js">	</script>-->
+
+</head>
+<body>
+
+
+<!--header开始-->
+<div class="header">
+	<div class="center_1000" style="height:80px;padding-bottom:10px;">
+
+<ul class="menu clearfix ">
+
+<li> <a class="cur"  href="index.php">网站首页 </a> </li>
+<li> <a href="list.php">分馆</a> </li>
+<li> <a href="list.php">资源 </a> </li>
+<li> <a href="list.php">服务</a> </li>
+
+<li class="parent"> <a href="about.php">本馆概况</a>
+<!--二级菜单-->
+	<ul class="sub_nav_ul lv2">
+
+	<li class="parent"><a href="about.php"> 本馆介绍 </a> 
+	<!--三级菜单-->
+		<ul class="sub_nav_ul lv3">
+		<li> <a href="javascript:void(0)"> 院长寄语 </a> </li>
+		<li> <a href="javascript:void(0)"> 概况与历史</a> </li>
+		</ul>
+
+	</li>
+	<li><a href="contact.php"> 联系我们</a> </li>
+
+	</ul>
+
+</li>
+</ul>
+
+</div>
+
+	
+	</div>
+	<script>
+
+$(function (){
+//二级菜单
+  $(".menu li").mouseenter(function(){
+  $(".lv2",this).fadeIn('200');	 	
+  });
+
+  $(".menu li").mouseleave(function(){	
+  $(".lv2",this).stop().hide();
+  });
+
+//三级菜单
+
+  $(".sub_nav_ul li").mouseenter(function(){
+  $(".lv3",this).fadeIn('200');	 	
+  });
+
+  $(".sub_nav_ul li").mouseleave(function(){
+	
+  $(".lv3",this).stop().hide();
+  });
+
+
+});
+
+
+</script>
+	<!--header结束-->
+

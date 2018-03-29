@@ -1,0 +1,427 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<title>浙信官网</title>
+	<link rel="stylesheet" href="css/layout.css" type="text/css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/jquery.jslides.css" type="text/css" media="screen" charset="utf-8">
+	<script type="text/javascript" charset="utf-8" src="js/jquery-1.9.1.min.js">	</script>
+	<!--<script type="text/javascript" charset="utf-8" src="js/jquery.jslides.js">	</script>-->
+
+</head>
+<body>
+
+
+<!--header开始-->
+<div class="header">
+	<div class="center_1000" style="height:80px;padding-bottom:10px;">
+	<a class="logo" href="index.php"> <img src="images/logo-black.png" /> </a>
+<ul class="menu clearfix ">
+
+<li> <a class="cur"  href="index.php">网站首页 </a> </li>
+<li> <a href="list.php">分馆</a> </li>
+<li> <a href="list.php">资源 </a> </li>
+<li> <a href="list.php">服务</a> </li>
+
+<li class="parent"> <a href="about.php">本馆概况</a>
+<!--二级菜单-->
+	<ul class="sub_nav_ul lv2">
+
+	<li class="parent"><a href="about.php"> 本馆介绍 </a> 
+	<!--三级菜单-->
+		<ul class="sub_nav_ul lv3">
+		<li> <a href="javascript:void(0)"> 院长寄语 </a> </li>
+		<li> <a href="javascript:void(0)"> 概况与历史</a> </li>
+		</ul>
+
+	</li>
+	<li><a href="contact.php"> 联系我们</a> </li>
+
+	</ul>
+
+</li>
+</ul>
+
+</div>
+
+	
+	</div>
+	<script>
+
+$(function (){
+//二级菜单
+  $(".menu li").mouseenter(function(){
+  $(".lv2",this).fadeIn('200');	 	
+  });
+
+  $(".menu li").mouseleave(function(){	
+  $(".lv2",this).stop().hide();
+  });
+
+//三级菜单
+
+  $(".sub_nav_ul li").mouseenter(function(){
+  $(".lv3",this).fadeIn('200');	 	
+  });
+
+  $(".sub_nav_ul li").mouseleave(function(){
+	
+  $(".lv3",this).stop().hide();
+  });
+
+
+});
+
+
+</script>
+	<!--header结束-->
+
+<!--index-->
+
+<link rel="stylesheet" href="css/jglobal.css" type="text/css" media="screen" charset="utf-8">
+
+<script type="text/javascript" charset="utf-8" src="js/slides.min.jquery.js">
+	
+</script>
+
+<div class="index_banner center_1000">
+
+  <div class="searchBox_newInsert">
+    <img style="float:left; margin-top:10px;" src="images/logo.png"/>
+    <div style="padding-left:170px;">
+      <ul class="sTab">
+          <li id = "tag_1" class = "on"><a href="javaScript:changeTag('tag_1','searchMix','searchMix')">全部</a></li>
+          <li id = "tag_2"><a href="javaScript:changeTag('tag_2','search','searchFBook')">图书</a></li>
+          <li id = "tag_3"><a href="javaScript:changeTag('tag_3','searchJour','searchFJour')"><span>期刊</a></li>
+          <li id = "tag_5"><a href="javaScript:changeTag('tag_5','searchThesis','searchFThesis')">学位论文</a></li>
+          <li id = "tag_6"><a href="javaScript:changeTag('tag_6','searchCP','searchFCP')">会议论文</a></li>
+      </ul>
+      <form action="http://book.zjgsu.superlib.net/area/login.jsp" id = "f2" name = "f2" target="_blank">
+      <div class="sInput">
+        <input class="txt" type="text" id="sw" name="sw"/>
+        <table class="sTip" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td id="advs"><A href='http://book.zjgsu.superlib.net/area/help/help.html' target=_blank>使用帮助</A></td>
+          </tr>
+        </table>
+        <input class="btn cn" type="button" onClick="indexsearch('ch');" value="中文检索"/>
+        <input class="btn en" type="button" onClick="indexsearch('en');" value="外文检索"/>
+        <input name = "ec" value = "UTF-8" type = "hidden">
+        <input name = "ecode" value = "UTF-8" type = "hidden">
+        <input name = "area" value = "zjgsu" type = "hidden"/>
+        <input name = "channel" id = "channel" value = "searchMix" type = "hidden"> 
+        <div class="clear"></div>
+      </div>
+      <div class="sLabel" id="sradio"></div>
+      </form>
+    </div>
+  </div>
+
+
+  
+</div>
+	<!--//tabs--> 
+<script>
+var boottype="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>书名</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>作者</LABEL>";
+var magtype="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>标题</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>作者</LABEL><INPUT id=slt3 type=radio value=3 name=Field ><label for=slt3>刊名</label><INPUT id=slt4 type=radio value=4 name=Field ><label for=slt4>关键词</label><INPUT id=slt6 type=radio value=6 name=Field ><label for=slt6>作者单位</label>";
+var hylwtype="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>标题</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>作者</LABEL><INPUT id=slt3 type=radio value=3 name=Field ><label for=slt3>关键词</label><INPUT id=slt4 type=radio value=4 name=Field ><label for=slt4>会议名称 </label>";
+var xwlwtype="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>标题</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>作者</LABEL><INPUT id=slt4 type=radio value=4 name=Field ><label for=slt4>授予单位</label><INPUT id=slt3 type=radio value=3 name=Field ><label for=slt3>关键词</label>";
+var video="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>视频名称</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>简介</LABEL><INPUT type=radio value=3 name=Field id=slt3><LABEL for=slt3>字幕</LABEL><INPUT type=radio value=4 name=Field id=slt4><LABEL for=slt4>主题词</LABEL>";
+var baozhi="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>标题</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>作者</LABEL><INPUT type=radio value=3 name=Field id=slt3><LABEL for=slt3>来源</LABEL><INPUT type=radio value=4 name=Field id=slt4><LABEL for=slt4>全文</LABEL>";
+var gnbz="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1> <LABEL for=slt1 id='bookn'>标准号</LABEL><INPUT type=radio value=2 name=Field id=slt2><LABEL for=slt2>标准中文名</LABEL><INPUT type=radio value=3 name=Field id=slt3><LABEL for=slt3>标准英文名</LABEL>";
+var zl="<INPUT type=radio CHECKED value=all name=Field id=slt0> <LABEL for=slt0>全部字段</LABEL><INPUT type=radio value=1 name=Field id=slt1><LABEL for=slt1>专利名称</LABEL><INPUT type=radio value=2 name=Field id=slt2> <LABEL for=slt2 id='bookn'>申请号</LABEL><INPUT type=radio value=3 name=Field id=slt3><LABEL for=slt3>发明人</LABEL><INPUT type=radio value=4 name=Field id=slt4><LABEL for=slt4>IPC号</LABEL>";
+var advdom = "zjgsu.superlib.net";
+var dom = "book.zjgsu.superlib.net/area";
+var advbook = "<A href='http://book."+advdom+"/advsearch.jsp' target=_blank>高级检索</A><BR><A href='http://"+dom+"/help/help.html' target=_blank>使用帮助</A>";
+var advmag ="<A href='http://jour."+advdom+"/advsearchmag.jsp' target=_blank>高级检索</A><BR><A href='http://"+dom+"/help/help.html' target=_blank>使用帮助</A>";
+var advcp = "<A href='http://jour."+advdom+"/advsearchcp.jsp' target=_blank>高级检索</A><BR><A href='http://"+dom+"/help/help.html' target=_blank>使用帮助</A>";
+var advthesis ="<A href='http://jour."+advdom+"/advsearchthesis.jsp' target=_blank>高级检索</A><BR><A href='http://"+dom+"/help/help.html' target=_blank>使用帮助</A>";
+var advdefault = "<A href='http://"+dom+"/help/help.html' target=_blank>使用帮助</A>";
+
+var ch_channel = "searchMix";
+var en_channel = "searchFMix";
+var dftag="tag_1";
+function changeTag(tag,ch,en){
+	if(ch=="goqw.jsp"){
+		en = "searchFJour";
+	}
+	ch_channel = ch;
+	en_channel = en; 
+	if(ch!=""){
+		document.getElementById("channel").value= ch;
+	}else{
+		document.getElementById("channel").value= en;
+	}
+	var f2=document.getElementById("f2");
+	try{  //有的单位只有一个按钮
+		if(ch==""){
+			document.getElementById("ch_search").disabled = true;
+		}else{
+			document.getElementById("ch_search").disabled = false;
+		}
+		if(en==""){
+			document.getElementById("en_search").disabled = true;
+		}else{
+			document.getElementById("en_search").disabled = false;
+		}
+	}catch (e) {}
+	if(dftag==""){
+		document.getElementById(tag).className ='on';
+	}else{
+		document.getElementById(dftag).className ='';
+		document.getElementById(tag).className ='on';
+	}
+	dftag=tag;
+	document.getElementById("sradio").innerHTML="";
+	switch(ch){
+		case "search":{
+			document.getElementById("sradio").innerHTML=boottype;
+			document.getElementById("advs").innerHTML=advbook;
+			break;
+		}
+		case "searchJour":{
+			document.getElementById("sradio").innerHTML=magtype;
+			document.getElementById("advs").innerHTML=advmag;
+			break;
+		}
+		case "searchCP":{
+			document.getElementById("sradio").innerHTML=hylwtype;
+			document.getElementById("advs").innerHTML=advcp;
+			break;
+		}
+		case "searchThesis":{
+			document.getElementById("sradio").innerHTML=xwlwtype;
+			document.getElementById("advs").innerHTML=advthesis;
+			break;
+		}
+		case "searchMix":{
+			document.getElementById("sradio").innerHTML="";
+			document.getElementById("advs").innerHTML=advdefault;
+			break;
+		}
+		default:{
+			document.getElementById("sradio").innerHTML="";
+			document.getElementById("advs").innerHTML=advdefault;
+			break;
+		}
+	}
+	document.getElementById("sw").focus();
+}
+
+function indexsearch(e){
+	if(e=="ch"){
+		document.getElementById("channel").value= ch_channel;
+	}else{
+		document.getElementById("channel").value = en_channel;
+	}
+
+	if(document.getElementById("sw").value!="")
+		document.getElementById("f2").submit();
+}
+</script>	
+ 
+
+<div class="center_1000 clearfix index_top" style="padding-top:25px;">
+
+	<div class="fl_300">
+
+<div id="tabs2">
+  <div class="tabs tabs2">
+        <ul class="clearfix bold">
+            <li class="tab-nav-current">最新消息</li>
+            <li class="tab-nav">最新资源</li>         
+        </ul>
+
+    </div>
+    <div class="tabs-body">
+        <div style="display:block">
+       <ul class="index_newslist">
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       <li> <a href="list.php"> 北大读书讲座：毛泽东晚年读书生活 </a> </li>
+       </ul>
+       	  <p style="text-align:right;padding-right:50px;">
+       <a href="list.php"> 更多 </a>
+              </p>
+        </div>
+        <div style="display:none">
+          <ul class="index_newslist">
+       <li> <a href="javascript:void(0)"> 哲学系分馆服务通知 </a> </li>
+       <li> <a href="javascript:void(0)"> 哲学系分馆服务通知 </a> </li>
+       <li> <a href="javascript:void(0)"> 哲学系分馆服务通知 </a> </li>
+       <li> <a href="javascript:void(0)"> 哲学系分馆服务通知 </a> </li>
+     
+       </ul>
+       <p style="text-align:right;padding-right:50px;">
+       <a href="list.php"> 更多 </a>
+              </p>
+        </div>    
+    </div>		
+	</div>
+	<!--tabs-->		
+
+	</div>
+	<div class="fr_650">
+
+		<div class="fr_fl_290">
+
+			
+	<div id="container">
+	
+			<div id="slides">
+				<div class="slides_container">
+				
+					<div class="slide">
+						<a ><img src="images/ljtz.jpg" width="290" height="220" ></a>
+						<div class="caption" style="bottom:0">
+							<p>11月6日晚7-9点，北配殿，华盛顿大学教授董玥主讲北京城的“民国范儿”—《民国北京城：历史与怀旧》</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a><img src="images/ljtz.jpg" width="290" height="220" ></a>
+						<div class="caption">
+							<p>Taxi</p>
+						</div>
+					</div>
+					<div class="slide">
+						<a><img src="images/ljtz.jpg" width="290" height="220"></a>
+						<div class="caption">
+							<p>11月6日晚7-9点，北配殿，华盛顿大学教授董玥主讲北京城的“民国范儿”—《民国北京城：历史与怀旧》</p>
+						</div>
+					</div>				
+				</div>
+			
+			</div>
+			<!---//slide-->
+	
+	</div>
+	<!--//container-->
+		<p style="text-align:right;">
+			<a href="javascript:void(0)"> 更多 </a>
+			</p>	
+		</div>
+	
+			
+		<div class="fr_fr_300">
+			<div class="clearfix">
+					
+			<div class="fr_300_fl ">
+				<img src="images/reference.png" />
+			</div>
+			<div class="fr_300_fr">
+				<ul class="fr_list clearfix">
+				<li> <a href="javascript:void(0)"> 实时问答 </a> </li>
+				<li> <a href="javascript:void(0)"> 电话咨询</a> </li>
+				<li> <a href="javascript:void(0)"> 邮件咨询 </a> </li>
+				<li> <a href="javascript:void(0)"> 捐赠</a> </li>
+				<li style="width:100%;"> <a href="javascript:void(0)"> Library @ Mobile Phone</a> </li>
+				<p class="erma_box">
+				<img class="qrcode_sm" src="images/qrcode_small.jpg" />
+				<img class="qrcode" src="images/qrcode_new.png" />
+				</p>
+				
+				</ul>
+				<!--//frlist-->
+			</div>
+				
+			</div>
+		
+
+		<ul class="frlist_bot clearfix">
+				<li> <a href="javascript:void(0)"> <img src="images/fr3.png" />  </a> </li>
+				<li> <a href="javascript:void(0)"> <img src="images/fr2.png" />  </a> </li>
+				<li> <a href="javascript:void(0)"> <img src="images/fr1.png" />  </a> </li>
+				<li> <a href="javascript:void(0)"> <img src="images/fr4.png" />  </a> </li>
+		</ul>
+			
+			
+			
+		</div>
+		
+		
+	</div>
+	
+	
+	
+</div>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function(){
+
+   $("#tabs1 ul li").bind("click", function () {
+                var index = $(this).index();
+                var divs = $("#tabs1 .tabs-body > div");
+                $(this).parent().children("li").attr("class", "tab-nav");//将所有选项置为未选中
+                $(this).attr("class", "tab-nav-current"); //设置当前选中项为选中样式
+                divs.hide();//隐藏所有选中项内容
+                divs.eq(index).show(); //显示选中项对应内容
+            });
+
+ $("#tabs2 ul li").bind("click", function () {
+                var index = $(this).index();
+                var divs = $("#tabs2 .tabs-body > div");
+                $(this).parent().children("li").attr("class", "tab-nav");//将所有选项置为未选中
+                $(this).attr("class", "tab-nav-current"); //设置当前选中项为选中样式
+                divs.hide();//隐藏所有选中项内容
+                divs.eq(index).show(); //显示选中项对应内容
+ });
+
+$(".qrcode_sm").hover(function(){
+
+	$('.qrcode').show('200'); 
+	},function(){
+	$('.qrcode').hide();	
+});
+//slides
+
+	$('#slides').slides({
+				preload: true,
+				preloadImage: 'images/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+				
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+				
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+
+	  });
+</script>
+
+
+<!--底部开始-->
+<div class="width_full footbg">
+<div class="footer center_1000 clearfix" style="padding-top:100px;">
+<p class="copy-right">
+	版权所有   北京大学图书馆©2012-2013   北京大学  馆员空间   CALIS   文理中心   CASHL   大学图书馆学报   图工委   高校分会  DRAA  馆长信箱 常用链接   网站地图  移动版  旧版入口
+</p>
+
+
+</div>
+</div>
+
+
+
+<!--底部结束-->
+
+</body>
+
+</html>

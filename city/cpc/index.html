@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Index</title>
+	<script type="text/javascript" charset="utf-8" src="http://localhost/jquery.min.js">	</script>
+	<script type="text/javascript" charset="utf-8" src="location.js">	</script>
+	<script type="text/javascript" charset="utf-8" src="cpc.js">	</script>
+
+</head>
+<body>
+<div class="ChinaArea" id="ChinaArea"> 
+    <select id="province" name="province" style="width: 100px;"></select> 
+   <select id="city" name="city" style="width: 100px;"></select> 
+    <select id="county"  name="county" style="width: 120px;"> </select>          
+
+
+<input type="hidden" name="some_name" ID="Tprovince" value="">    
+<input type="hidden" name="some_name" ID="TCity" value="">    
+<input type="hidden" name="some_name" ID="TCounty" value="">    
+
+  </div> 
+  <script type="text/javascript"> 
+    $(document).ready(function() { 
+$("#ChinaArea").jChinaArea({ 
+               aspnet:true, 
+               s1:"浙江省", 
+               s2:"杭州市", 
+               s3:"西湖区"  
+           }); 
+      
+    }); 
+  </script> 
+
+</body>
+ 
+
+</html>

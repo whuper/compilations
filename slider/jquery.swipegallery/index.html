@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="content-language" content="de">
+    <meta name="author" content="www.app-agentur-bw.de">
+    <meta name="description" content="swipeGallery - jQuery-Plugin für mobile, webbasierte Bildergalerien von der App-Agentur in Baden-Württemberg">
+    <meta name="keywords" content="jQuery,Plugin,Gallery,Bildergalerie,Javascript,mobil,iPhone,Android">
+    <title>swipeGallery</title>
+    <script type="text/javascript" src="http://localhost/jquery.min.js"></script> 
+    <script type="text/javascript" src="_res/jquery.swipegallery.js"></script>
+    <script type="text/javascript" language="Javascript">
+     $(window).load(function() { 
+        $('#swipeallery').swipeGallery({autoHeight: false});  
+     });
+    </script> 
+    <link rel="stylesheet" type="text/css" href="_css/jquery.swipegallery.css">
+</head>
+<body>
+    <ul id="swipeallery">
+        <li><img id="test1" src="_img/slide1.jpg" alt="" title=""/></li>
+        <li><img src="_img/slide2.jpg" alt="" title=""/></li>
+        <li><img src="_img/slide3.jpg" alt="" title=""/></li>
+        <li><img src="_img/slide4.jpg" alt="" title=""/></li>
+        <li><img src="_img/slide5.jpg" alt="" title=""/></li>
+    </ul>  
+</body>
+</html>

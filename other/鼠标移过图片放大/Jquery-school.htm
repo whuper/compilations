@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<title>Zoomer相册鼠标经过放大图片代码 - Jquery-school</title>
+<style type="text/css" media="screen">
+	
+ul.thumb {list-style: none; padding: 10px;width: 800px;}
+ul.thumb li {margin: 0; padding: 5px;float: left;position: relative;width: 110px;height: 110px;}
+ul.thumb li img {width: 100px; height: 100px;border: 1px solid #ddd;padding: 5px;background: #f0f0f0;position: absolute;left: 0; top: 0;}
+ul.thumb li img.hover {margin-top:15px;border:2px;}
+
+.title{
+	position:absolute;
+	width:185px;
+	height:35px;
+	margin:0;font-weight:900;
+	padding:17px 0 0 0;
+	text-align:center; 
+	color: #fff;
+ }
+	
+</style>
+</head>
+
+<body>
+	<div id="page">
+	<br><br><br>
+		<div id="content">
+		
+		<div class="container">
+		
+			<ul class="thumb">
+				<li><a ><img src="./Jquery-school_files/robots.jpg" alt="Robots like cameras"></a></li>
+				<li><a><img src="./Jquery-school_files/monster.jpg" alt="Monsters!"></a></li>
+				<li><a><img src="./Jquery-school_files/santa.jpg" alt="Santa down under"></a></li>
+				<li style="z-index: 0;"><a ><img src="./Jquery-school_files/thumb6.jpg" alt="Sponguebob!"></a></li>
+				<li><a  alt="Star Wars"></a></li>
+				<li><a  alt="Hulk Smash!"></a></li>
+				<li><a alt="Dinosaur time"></a></li>
+				<li ><a ><img src="./Jquery-school_files/orange.jpg" alt="Orange car" class="" ></a></li>
+				<li ><a  alt="Aliens!" class="" ></a></li>
+				<li><a ><img src="./Jquery-school_files/supe.jpg" alt="It&#39;s Superman!" class="" ></a></li>
+                <li style="z-index: 0;"><a ><img src="./Jquery-school_files/garfield.jpg" alt="Where&#39;s my lasagne?" class="" ></a></li>
+				<li><a ><img src="./Jquery-school_files/bridge.jpg" alt="The bridge at Sunset"></a></li>
+				<li><a><img src="./Jquery-school_files/peanuts.jpg" alt="Peanuts!"></a></li>
+				<li ><a ><img src="./Jquery-school_files/thumb5.jpg" alt="1956 Yellow Car" class="" ></a></li>
+				<li ><span class="title">Ooooh. Pretty</span><a ><img src="./Jquery-school_files/thumb4.jpg" alt="Ooooh. Pretty" class="hover" ></a></li>
+				<li ><a ><img src="./Jquery-school_files/thumb3.jpg" alt="Lets build something" class="" </a></li>
+				<li><a alt="Puppy love" class="" ></a></li>
+				<li><a  alt="It&#39;s a Toy Story" class="" ></a></li>
+			</ul>
+			
+		</div>
+		
+		
+		
+		
+	</div>
+<script type="text/javascript" src="./Jquery-school_files/jquery-latest.js"></script>
+<script type="text/javascript" src="./Jquery-school_files/zoomer.js"></script> 
+<script type="text/javascript">
+$(document).ready(function(){
+ 	$('ul.thumb li').Zoomer({speedView:200,speedRemove:400,altAnim:true,speedTitle:400,debug:false});
+});
+</script>
+</div>
+
+
+
+</body></html>

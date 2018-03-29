@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Predefault</title>
+
+</head>
+<body>
+<div class="name">
+	<script>
+
+</script> 
+
+<a href="http://www.test.com" id="test">测试cece</a> 
+
+
+<script type="text/javascript"> 
+
+
+
+
+var test = document.getElementById('test'); 
+
+test.onclick = function(e) { 
+
+   alert('URL：' + this.href + ', 不会跳转'); 
+
+   stopDefault(e); 
+}
+
+
+function stopDefault(e) { 
+
+     if (e && e.preventDefault) {//如果是FF下执行这个
+
+        e.preventDefault();
+
+    }else{ 
+
+        window.event.returnValue = false;//如果是IE下执行这个
+
+    }
+
+    return false;
+}
+
+
+</script> 	
+	
+</div>
+
+</body>
+
+</html>

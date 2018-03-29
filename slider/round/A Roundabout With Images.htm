@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+		<meta charset="utf-8">
+		<title>A Roundabout With Images</title>
+		
+		<link href="A%20Roundabout%20With%20Images_files/demos.css" rel="stylesheet">
+
+
+		<script src="A%20Roundabout%20With%20Images_files/jquery.js"></script>
+		
+		<script src="A%20Roundabout%20With%20Images_files/jquery_002.js"></script>
+
+</head>
+	<body>
+		<h1>With Images</h1>
+		
+		<ul class="roundabout-holder" style="padding: 0px; position: relative;">
+			<li class="roundabout-moveable-item roundabout-in-focus"><img src="A%20Roundabout%20With%20Images_files/award.png" alt="Award"></li>
+			<li class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/backpack.png" alt="Backpack"></li>
+			<li  class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/bear.png" alt="Bear"></li>
+			<li  class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/gun.png" alt="Gun"></li>
+			<li  class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/high-five.png" alt="High-Five"></li>
+			<li  class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/mustache.png" alt="Mustache"></li>
+			<li  class="roundabout-moveable-item"><img src="A%20Roundabout%20With%20Images_files/sun.png" alt="Sun"></li>
+		</ul>
+<script>
+   $(document).ready(function() {
+      $('.roundabout-holder').roundabout({
+         autoplay: true,
+         autoplayDuration: 3000,
+         autoplayPauseOnHover: true
+      });
+   });
+</script> 
+
+</body></html>

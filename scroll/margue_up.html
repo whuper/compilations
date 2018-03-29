@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Margin</title>
+
+</head>
+<body>
+	<div id="demo" style="overflow:hidden;height:139px;width:232px;background:#f4f4f4;color:#ffffff;" >
+		<div id="demo1">
+	<ul>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	<li><a href="javascript:void(0)"> 电话 会发生发哈市 </a> </li>
+	</ul>
+		</div>
+<div id="demo2" ></div>
+</div>
+   <script>
+   var speed=20;
+   demo2.innerHTML=demo1.innerHTML;
+   function Marquee(){
+   if(demo2.offsetTop-demo.scrollTop<=0)
+   demo.scrollTop-=demo1.offsetHeight;
+   else{
+   demo.scrollTop++;
+   }
+   }
+   var MyMar=setInterval(Marquee,speed)
+   demo.onmouseover=function() {
+	   clearInterval(MyMar);
+   }
+   demo.onmouseout=function() {
+	   MyMar=setInterval(Marquee,speed);
+   }
+   </script>
+</body>
+
+</html>

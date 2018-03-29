@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Margin3</title>
+
+</head>
+<body>
+	<div id="margue_l" style="overflow:hidden;width:350px;" align=center>
+
+<table border=0 align=center  >
+		<tr>
+			<td  bgcolor="#ffffff" id="marque_lPic1">
+			<p>
+			fjkaskdjasdkashdkjhlashdkljasdhashldkjhjash
+			</p>
+			</td>
+			<td id="marque_lPic2" valign=top></td>
+	</tr>
+	</table>
+	
+</div>
+<script type="text/javascript">
+var speed=50 
+marque_lPic2.innerHTML=marque_lPic1.innerHTML 
+
+
+function Marquee(){ 
+if(margue_l.scrollLeft>=marque_lPic1.scrollWidth){ 
+margue_l.scrollLeft=0 
+}else{ 
+	margue_l.scrollLeft++;
+//	alert(margue_l.scrollLeft);
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+margue_l.onmouseover=function() {clearInterval(MyMar)} 
+margue_l.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script>
+
+</body>
+
+</html>

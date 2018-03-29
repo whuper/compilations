@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+	<title>Delegate</title>
+	<script type="text/javascript" charset="utf-8" src="http://localhost/jquery.min.js">
+		
+	</script>
+
+</head>
+<body>
+	<style type="text/css" media="screen">
+		.hover {
+		
+		background-color:#ccc;
+		}
+		
+		
+	</style>
+<div class="name">
+<ul>
+<li>relative </li>
+<li>relative </li>
+<li>relative </li>
+<li>relative </li>
+<li>relative </li>
+<li>relative </li>
+</ul>
+	
+</div>
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+
+			$("ul").delegate("li", "mouseover", function(){
+			
+ $(this).toggleClass("hover"); });
+	
+		  });
+</script>
+</body>
+
+</html>
